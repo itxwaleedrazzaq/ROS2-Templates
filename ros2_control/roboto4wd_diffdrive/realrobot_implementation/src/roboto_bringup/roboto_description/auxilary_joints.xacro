@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="auxilary_joints">
+
+    <xacro:property name="aux_radius" value="0.0"/>
+    <xacro:property name="aux_length" value="0.0"/>
+    
+    
+    <!-- auxiliary link1  -->
+    <link name="auxiliary_link1">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * aux_radius}' h='${correction * aux_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="auxiliary_standoff1_joint" type="fixed">
+        <parent link="standoff_link1"/>
+        <child link="auxiliary_link1"/>
+        <origin xyz="0.0 0.0 ${standoff_length}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!-- auxiliary link2  -->
+    <link name="auxiliary_link2">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * aux_radius}' h='${correction * aux_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="auxiliary_standoff2_joint" type="fixed">
+        <parent link="standoff_link2"/>
+        <child link="auxiliary_link2"/>
+        <origin xyz="0.0 0.0 ${standoff_length}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!-- auxiliary link3  -->
+    <link name="auxiliary_link3">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * aux_radius}' h='${correction * aux_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="auxiliary_standoff3_joint" type="fixed">
+        <parent link="standoff_link3"/>
+        <child link="auxiliary_link3"/>
+        <origin xyz="0.0 0.0 ${standoff_length}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!-- auxiliary link4  -->
+    <link name="auxiliary_link4">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * aux_radius}' h='${correction * aux_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.0" length="0.0"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="auxiliary_standoff4_joint" type="fixed">
+        <parent link="standoff_link4"/>
+        <child link="auxiliary_link4"/>
+        <origin xyz="0.0 0.0 ${standoff_length}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+</robot>

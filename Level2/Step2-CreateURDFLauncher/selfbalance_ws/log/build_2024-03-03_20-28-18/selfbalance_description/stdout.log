@@ -1,0 +1,38 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done (6.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description
+-- Install configuration: ""
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//urdf
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//urdf/self_balance.urdf
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//launch
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//launch/display.launch.py
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//rviz_config
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/ament_index/resource_index/package_run_dependencies/selfbalance_description
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/ament_index/resource_index/parent_prefix_path/selfbalance_description
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/ament_prefix_path.sh
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/ament_prefix_path.dsv
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/path.sh
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/path.dsv
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.bash
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.sh
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.zsh
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.dsv
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/package.dsv
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/ament_index/resource_index/packages/selfbalance_description
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/cmake/selfbalance_descriptionConfig.cmake
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/cmake/selfbalance_descriptionConfig-version.cmake
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/package.xml

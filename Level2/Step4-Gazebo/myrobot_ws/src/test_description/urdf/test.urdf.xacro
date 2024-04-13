@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="test">
+
+    <xacro:include filename='macros.xacro'/>
+    <xacro:include filename="basic_model.xacro"/>
+    <xacro:include filename="gazebo_model.xacro"/>
+</robot>

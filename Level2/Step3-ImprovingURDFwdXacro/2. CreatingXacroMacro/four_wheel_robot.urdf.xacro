@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name='four_wheel_robot'>
+    
+                <!-- Variables  -->
+    <xacro:property name='base_length' value='0.4'/>
+    <xacro:property name='base_width' value='0.2'/>
+    <xacro:property name='base_height' value='0.1'/>
+
+    <xacro:property name='wheel_radius' value='${base_height/2.0}'/>
+    <xacro:property name='wheel_length' value='${base_height/4.0}'/>
+
+                        <!-- Function for creating wheels -->
+    <xacro:macro name='wheel_link' params='prefix'>
+    <link name="${prefix}_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
+    </xacro:macro>
+
+
+    <material name='green'>
+        <color rgba="0.0 0.5 0.0 1.0"/>
+    </material>
+
+            <!-- Base Foot -->
+    <link name="foot"></link>
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${base_height/2.0}" rpy="0.0 0.0 0.0"/>
+            <material name="green"/>
+        </visual>
+    </link>
+    <joint name="base_foot" type="fixed">
+        <parent link="foot"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0 ${base_height/2.0}" rpy="0 0.0 0.0"/>
+    </joint>
+
+
+        <!-- Front Left Wheel -->
+    <xacro:wheel_link prefix='front_left'/>
+    <joint name="base_front_left_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="front_left_wheel_link"/>
+        <origin xyz="${base_length/4.0} ${-base_width/2.0 + -wheel_length/2.0} 0.0" rpy="${pi/2.0} 0.0 0.0"/>
+        <axis xyz="0.0 0 1"/>
+    </joint>
+
+
+        <!-- Front Right Wheel -->
+    <xacro:wheel_link prefix='front_right'/>
+    <joint name="base_front_right_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="front_right_wheel_link"/>
+        <origin xyz="${base_length/4.0} ${base_width/2.0 + wheel_length/2.0} 0.0" rpy="${pi/2.0} 0.0 0.0"/>
+        <axis xyz="0.0 0 1"/>
+    </joint>
+
+
+            <!-- Back left Wheel -->
+    <xacro:wheel_link prefix='back_left'/>
+    <joint name="base_back_left_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="back_left_wheel_link"/>
+        <origin xyz="${-base_length/4.0} ${-base_width/2.0 + -wheel_length/2.0} 0.0" rpy="${pi/2.0} 0.0 0.0"/>
+        <axis xyz="0.0 0 1"/>
+    </joint>
+
+             <!-- Back right Wheel -->
+    <xacro:wheel_link prefix='back_right'/>
+    <joint name="base_back_right_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="back_right_wheel_link"/>
+        <origin xyz="${-base_length/4.0} ${base_width/2.0 + wheel_length/2.0} 0.0" rpy="${pi/2.0} 0.0 0.0"/>
+        <axis xyz="0.0 0 1"/>
+    </joint>
+
+</robot>

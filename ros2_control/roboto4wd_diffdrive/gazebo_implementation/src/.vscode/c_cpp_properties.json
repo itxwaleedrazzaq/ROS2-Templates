@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/waleed/ros2pratice/humanoid_ws/install/image_geometry/include/**",
+        "/home/waleed/ros2pratice/humanoid_ws/install/humanoid_interfaces/include/**",
+        "/home/waleed/ros2pratice/humanoid_ws/install/cv_bridge/include/**",
+        "/home/waleed/ros2pratice/level3/action_challenge/install/movact/include/**",
+        "/home/waleed/ros2pratice/level3/action_ws/install/my_robot_interfaces/include/**",
+        "/home/waleed/ros2pratice/level3/action_ws/install/custom_actions/include/**",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/custom_msg_srv/include/**",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/my_robot_interfaces/include/**",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/custom_msgs_srvs/include/**",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/activity3_msgs_srvs/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

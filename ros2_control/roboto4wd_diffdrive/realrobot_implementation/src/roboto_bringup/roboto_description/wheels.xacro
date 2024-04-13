@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+   <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="roboto_wheels">
+
+    <xacro:property name="wheel_radius" value="0.03"/>
+    <xacro:property name="wheel_length" value="0.02"/>
+    
+    
+    
+     <!-- left back wheel  -->
+     <link name="left_back_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <material name="darknavy"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.05' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_back_wheel_joint" type="continuous">
+        <origin xyz="-${slate_length / 4.0} ${slate_width / 2.0 + wheel_length / 2.0} 0.0" rpy="-${pi/2.0} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="left_back_wheel"/>
+        <axis xyz="0.0 0.0 1"/>
+    </joint>
+
+
+    <!-- left front wheel  -->
+    <link name="left_front_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <material name="darknavy"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.05' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="left_front_wheel_joint" type="continuous">
+        <origin xyz="${slate_length / 4.0} ${slate_width / 2.0 + wheel_length / 2.0} 0.0" rpy="-${pi/2.0} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="left_front_wheel"/>
+        <axis xyz="0.0 0.0 1"/>
+    </joint>
+
+    <!-- right back tyre  -->
+    <link name="right_back_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <material name="darknavy"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.05' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_back_wheel_joint" type="continuous">
+        <origin xyz="-${slate_length / 4.0} -${slate_width / 2.0 + wheel_length / 2.0} 0.0" rpy="-${pi/2.0} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="right_back_wheel"/>
+        <axis xyz="0.0 0.0 1"/>
+    </joint>
+
+    <!-- right front tyre  -->
+    <link name="right_front_wheel">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <material name="darknavy"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.05' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="right_front_wheel_joint" type="continuous">
+        <origin xyz="${slate_length / 4.0} -${slate_width / 2.0 + wheel_length / 2.0} 0.0" rpy="-${pi/2.0} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="right_front_wheel"/>
+        <axis xyz="0.0 0.0 1"/>
+    </joint>
+   </robot>

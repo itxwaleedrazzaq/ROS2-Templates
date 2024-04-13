@@ -1,0 +1,22 @@
+-- Install configuration: ""
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//urdf
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//urdf/self_balance.urdf
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//launch
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//launch/display.launch.py
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//rviz_config
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description//rviz_config/self_balance.rviz
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/ament_index/resource_index/package_run_dependencies/selfbalance_description
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/ament_index/resource_index/parent_prefix_path/selfbalance_description
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/ament_prefix_path.sh
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/path.sh
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/environment/path.dsv
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.bash
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.sh
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.zsh
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/local_setup.dsv
+-- Installing: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/package.dsv
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/ament_index/resource_index/packages/selfbalance_description
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/cmake/selfbalance_descriptionConfig.cmake
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/cmake/selfbalance_descriptionConfig-version.cmake
+-- Up-to-date: /home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/install/selfbalance_description/share/selfbalance_description/package.xml

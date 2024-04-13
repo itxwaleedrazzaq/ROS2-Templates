@@ -1,0 +1,32 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/waleed/ros2pratice/level1/level1_sumup/build/custom_test",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/custom_test/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/custom_msg_srv/local/lib/python3.10/dist-packages",
+        "/home/waleed/ros2pratice/level1/level1_sumup/build/SrvCli",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/SrvCli/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/level1_sumup/build/PubSub",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/PubSub/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/my_py_pkg/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/custom_msgs_srvs/local/lib/python3.10/dist-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/activity3_msgs_srvs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/waleed/ros2pratice/level1/level1_sumup/build/custom_test",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/custom_test/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/custom_msg_srv/local/lib/python3.10/dist-packages",
+        "/home/waleed/ros2pratice/level1/level1_sumup/build/SrvCli",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/SrvCli/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/level1_sumup/build/PubSub",
+        "/home/waleed/ros2pratice/level1/level1_sumup/install/PubSub/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/my_py_pkg/lib/python3.10/site-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/custom_msgs_srvs/local/lib/python3.10/dist-packages",
+        "/home/waleed/ros2pratice/level1/1_firstprog/install/activity3_msgs_srvs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

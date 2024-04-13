@@ -1,0 +1,35 @@
+[0.387s] Invoking command in '/home/waleed/ros2pratice/level2/myrobot_ws/build/test_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/waleed/ros2pratice/TAM_ws/install/sim:/home/waleed/ros2pratice/TAM_ws/install/drawer:/home/waleed/ros2pratice/TAM_ws/install/TAM_draw:/home/waleed/ros2pratice/level1/level1_sumup/install/custom_test:/home/waleed/ros2pratice/level1/level1_sumup/install/SrvCli:/home/waleed/ros2pratice/level1/level1_sumup/install/PubSub:/home/waleed/ros2pratice/level1/1_firstprog/install/my_py_pkg:/opt/ros/humble /home/waleed/.local/bin/cmake --build /home/waleed/ros2pratice/level2/myrobot_ws/build/test_description -- -j4 -l4
+[0.473s] Invoked command in '/home/waleed/ros2pratice/level2/myrobot_ws/build/test_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/waleed/ros2pratice/TAM_ws/install/sim:/home/waleed/ros2pratice/TAM_ws/install/drawer:/home/waleed/ros2pratice/TAM_ws/install/TAM_draw:/home/waleed/ros2pratice/level1/level1_sumup/install/custom_test:/home/waleed/ros2pratice/level1/level1_sumup/install/SrvCli:/home/waleed/ros2pratice/level1/level1_sumup/install/PubSub:/home/waleed/ros2pratice/level1/1_firstprog/install/my_py_pkg:/opt/ros/humble /home/waleed/.local/bin/cmake --build /home/waleed/ros2pratice/level2/myrobot_ws/build/test_description -- -j4 -l4
+[0.639s] Invoking command in '/home/waleed/ros2pratice/level2/myrobot_ws/build/test_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/waleed/ros2pratice/TAM_ws/install/sim:/home/waleed/ros2pratice/TAM_ws/install/drawer:/home/waleed/ros2pratice/TAM_ws/install/TAM_draw:/home/waleed/ros2pratice/level1/level1_sumup/install/custom_test:/home/waleed/ros2pratice/level1/level1_sumup/install/SrvCli:/home/waleed/ros2pratice/level1/level1_sumup/install/PubSub:/home/waleed/ros2pratice/level1/1_firstprog/install/my_py_pkg:/opt/ros/humble /home/waleed/.local/bin/cmake --install /home/waleed/ros2pratice/level2/myrobot_ws/build/test_description
+[0.700s] -- Install configuration: ""
+[0.701s] -- Execute custom install script
+[0.702s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//urdf/arm.xacro
+[0.703s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//urdf/basic_model.xacro
+[0.703s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//urdf/camera.xacro
+[0.704s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//urdf/gazebo_model.xacro
+[0.705s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//urdf/macros.xacro
+[0.705s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//urdf/test.urdf.xacro
+[0.706s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//launch/display.launch.xml
+[0.707s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//launch/gazebo.launch.py
+[0.707s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//launch/rviz.launch.py
+[0.708s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//launch/test.rviz
+[0.708s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//rviz_config/test.rviz
+[0.709s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//worlds/test.world
+[0.710s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//worlds/test/model.config
+[0.710s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description//worlds/test/model.sdf
+[0.711s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/ament_index/resource_index/package_run_dependencies/test_description
+[0.712s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/ament_index/resource_index/parent_prefix_path/test_description
+[0.713s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/environment/ament_prefix_path.sh
+[0.714s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/environment/ament_prefix_path.dsv
+[0.714s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/environment/path.sh
+[0.715s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/environment/path.dsv
+[0.716s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/local_setup.bash
+[0.717s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/local_setup.sh
+[0.717s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/local_setup.zsh
+[0.719s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/local_setup.dsv
+[0.719s] -- Symlinking: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/package.dsv
+[0.727s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/ament_index/resource_index/packages/test_description
+[0.727s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/cmake/test_descriptionConfig.cmake
+[0.728s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/cmake/test_descriptionConfig-version.cmake
+[0.729s] -- Up-to-date symlink: /home/waleed/ros2pratice/level2/myrobot_ws/install/test_description/share/test_description/package.xml
+[0.740s] Invoked command in '/home/waleed/ros2pratice/level2/myrobot_ws/build/test_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/waleed/ros2pratice/TAM_ws/install/sim:/home/waleed/ros2pratice/TAM_ws/install/drawer:/home/waleed/ros2pratice/TAM_ws/install/TAM_draw:/home/waleed/ros2pratice/level1/level1_sumup/install/custom_test:/home/waleed/ros2pratice/level1/level1_sumup/install/SrvCli:/home/waleed/ros2pratice/level1/level1_sumup/install/PubSub:/home/waleed/ros2pratice/level1/1_firstprog/install/my_py_pkg:/opt/ros/humble /home/waleed/.local/bin/cmake --install /home/waleed/ros2pratice/level2/myrobot_ws/build/test_description

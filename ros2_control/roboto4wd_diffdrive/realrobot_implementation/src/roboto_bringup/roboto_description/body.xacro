@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="main_body">
+
+    <!-- adding dependencies -->
+    <xacro:include filename="sensors.xacro"/>
+
+    <!-- Acrlylic slate properties  -->
+    <xacro:property name="slate_length" value='0.25'/>
+    <xacro:property name="slate_width" value='0.14'/>
+    <xacro:property name="slate_height" value='0.005'/>
+
+    <!-- standoffs properties -->
+    <xacro:property name="standoff_radius" value="0.003"/>
+    <xacro:property name="standoff_length" value="0.025"/>
+
+
+    <!-- colours -->
+    <material name="brightyellowgreen" ><color rgba="0.615686274509804 1.0 0.0 1.0" /></material>
+    <material name="goldenbrown" ><color rgba="0.6980392156862745 0.47843137254901963 0.00392156862745098 1.0" /></material>
+
+    <!-- other files  -->
+    <xacro:include filename="inertia_macro.xacro"/>
+    <xacro:include filename="wheels.xacro"/>
+
+
+    <!-- base foot lin -->
+    <link name="base_foot"></link>
+
+    <!-- base slate -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 ${slate_height / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${slate_length} ${slate_width} ${slate_height}"/>
+            </geometry>
+            <material name="brightyellowgreen"/>
+        </visual>
+        <xacro:box_inertia m='0.1' l='${correction * slate_length}' w='${correction * slate_width}' h='${correction * slate_height}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <collision>
+            <origin xyz="0.0 0.0 ${slate_height / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${slate_length} ${slate_width} ${slate_height}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_foot_joint" type="fixed">
+        <parent link="base_foot"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 ${wheel_radius}" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+
+    <!-- camera sensor joint -->
+    <joint name="base_sensor_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="sensor_frame"/>
+        <origin xyz="${(slate_length / 2.0)-sensor_length} 0.0 ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!-- standoff links -->
+    <link name="standoff_link1">
+        <visual>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+            <material name="goldenbrown"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * standoff_radius}' h='${correction * standoff_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_standoff1_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="standoff_link1"/>
+        <origin xyz="${slate_length/2.4} ${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+
+    <link name="standoff_link2">
+        <visual>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+            <material name="goldenbrown"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * standoff_radius}' h='${correction * standoff_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_standoff2_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="standoff_link2"/>
+        <origin xyz="${slate_length/2.4} -${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+    <!-- 3 -->
+    <link name="standoff_link3">
+        <visual>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+            <material name="goldenbrown"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * standoff_radius}' h='${correction * standoff_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_standoff3_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="standoff_link3"/>
+        <origin xyz="-${slate_length/2.4} -${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!-- 4 -->
+
+    <link name="standoff_link4">
+        <visual>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+            <material name="goldenbrown"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.001' r='${correction * standoff_radius}' h='${correction * standoff_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <origin xyz="0.0 0.0 ${standoff_length / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${standoff_radius}" length="${standoff_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_standoff4_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="standoff_link4"/>
+        <origin xyz="-${slate_length/2.4} ${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+    <!-- auxiliary joints -->
+    <xacro:include filename="auxilary_joints.xacro"/>
+
+
+    <!-- upper slate and its joitns with auxiliary -->
+    <link name="upper_link">
+        <visual>
+            <origin xyz="0.0 0.0 ${slate_height / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${slate_length} ${slate_width} ${slate_height}"/>
+            </geometry>
+            <material name="brightyellowgreen"/>
+        </visual>
+        <xacro:box_inertia m='0.1' l='${correction * slate_length}' w='${correction * slate_width}' h='${correction * slate_height}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <collision>
+            <origin xyz="0.0 0.0 ${slate_height / 2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${slate_length} ${slate_width} ${slate_height}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_upper_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="upper_link"/>
+        <origin xyz="0.0 0.0 ${standoff_length + slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="upper_auxiliary1_joint" type="fixed">
+        <parent link="upper_link"/>
+        <child link="auxiliary_link1"/>
+        <origin xyz="${slate_length/2.4} ${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    <joint name="upper_auxiliary2_joint" type="fixed">
+        <parent link="upper_link"/>
+        <child link="auxiliary_link2"/>
+        <origin xyz="${slate_length/2.4} -${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="upper_auxiliary3_joint" type="fixed">
+        <parent link="upper_link"/>
+        <child link="auxiliary_link3"/>
+        <origin xyz="-${slate_length/2.4} -${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="upper_auxiliary4_joint" type="fixed">
+        <parent link="upper_link"/>
+        <child link="auxiliary_link4"/>
+        <origin xyz="-${slate_length/2.4} ${slate_width/2.5} ${slate_height}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+</robot>

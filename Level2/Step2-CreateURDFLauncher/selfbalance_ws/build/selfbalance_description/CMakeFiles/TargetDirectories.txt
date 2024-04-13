@@ -1,0 +1,9 @@
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/uninstall.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/selfbalance_description_uninstall.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/test.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/edit_cache.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/rebuild_cache.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/list_install_components.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/install.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/install/local.dir
+/home/waleed/ros2pratice/level2/2_URDFLauncher/selfbalance_ws/build/selfbalance_description/CMakeFiles/install/strip.dir
