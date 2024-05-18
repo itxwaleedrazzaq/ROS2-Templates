@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ackermann_robot">
+
+    <xacro:include filename="inertia_macro.xacro"/>
+
+    <!-- chassis -->
+    <xacro:property name="base_length" value='0.25'/>
+    <xacro:property name="base_width" value= '${base_length/2.5}'/>
+    <xacro:property name="base_height" value='${base_width/2.5}'/>
+
+    <!-- wheels  -->
+    <xacro:property name="wheel_radius" value='${base_length/8.0}'/>
+    <xacro:property name="wheel_length" value='${wheel_radius/2.0}'/>
+
+    <!-- wheeltracker and wheelbase -->
+    <xacro:property name="wheel_base" value='${base_length*0.8}'/>
+    <xacro:property name="tracker_radius" value='${base_height/7.0}'/>
+    <xacro:property name="tracker_length" value='${base_width +(1.5*wheel_radius)}'/>
+
+    <xacro:property name="sphere_radius" value='${wheel_radius/2.0}'/>
+    <xacro:property name="correction" value='3.0'/>
+
+    <!-- colors  -->
+    <material name='green'><color rgba="0.0 0.5 0.0 1.0"/></material>
+    <material name='blue'><color rgba="0.0 0.0 0.5 1.0"/></material>
+
+    <!-- base link -->
+    <link name="base_footprint"></link>
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height} "/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${base_height/2.0}" rpy="0.0 0.0 0.0"/>
+            <material name="green"/>
+        </visual>
+        <xacro:box_inertia m='0.1' l='${correction * base_length}' w='${correction * base_width}' h='${correction * base_height}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <collision>
+            <geometry>
+                <box size="${base_length} ${base_width} ${base_height} "/>
+            </geometry>
+            <origin xyz="0.0 0.0 ${base_height/2.0}" rpy="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+    <joint name="base_foot_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 ${wheel_radius} " rpy="0 0.0 0.0"/>
+    </joint>
+
+
+    <!-- front tracker -->
+    <link name="front_tracker">
+        <visual>
+            <geometry>
+                <cylinder radius="${tracker_radius}" length="${tracker_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="blue"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.01' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <geometry>
+                <cylinder radius="${tracker_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+    <joint name="front_tracker_joint" type="revolute">
+        <parent link="base_link"/>
+        <child link="front_tracker"/>
+        <limit lower="-0.4" upper="0.4" effort="100" velocity="100"/>
+        <origin xyz="${wheel_base/2.0} 0.0 -${tracker_radius}" rpy="-${pi/2.0} 0.0 0.0"/>
+        <axis xyz="0.0 -1 0"/>
+    </joint>
+
+    <!-- rear tracker -->
+    <link name="rear_tracker">
+        <visual>
+            <geometry>
+                <cylinder radius="${tracker_radius}" length="${tracker_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="blue"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.01' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <geometry>
+                <cylinder radius="${tracker_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+    <joint name="rear_tracker_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="rear_tracker"/>
+        <axis xyz="0 0 1"/>
+        <origin xyz="-${wheel_base/2.0} 0.0 -${tracker_radius}" rpy="-${pi/2.0} 0.0 0.0"/>
+    </joint>
+
+
+    <!-- rear right wheel -->
+    <link name="rear_right_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.01' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+    <joint name="rear_right_wheel_joint" type="fixed">
+        <parent link="rear_tracker"/>
+        <child link="rear_right_wheel_link"/>
+        <origin xyz="0.0 0.0 -${tracker_length/2.0 + wheel_length/2.0}" rpy="0.0 0.0 0.0"/>
+        <!-- <mimic joint="virtual_drive_joint" multiplier="1.0" offet="0.0"/> -->
+    </joint>
+
+    <!-- rear left wheel -->
+    <link name="rear_left_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.01' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+    <joint name="rear_left_wheel_joint" type="fixed">
+        <parent link="rear_tracker"/>
+        <child link="rear_left_wheel_link"/>
+        <origin xyz="0.0 0.0 ${tracker_length/2.0 + wheel_length/2.0}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+    <!-- front left steer -->
+    <link name="front_left_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.01' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="front_left_wheel_joint" type="continuous">
+        <parent link="front_tracker"/>
+        <child link="front_left_wheel_link"/>
+        <origin xyz="0.0 0.0 -${tracker_length/2.0 + wheel_length/2.0}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+        <mimic joint="rear_tracker_joint" multiplier="1.0" offet="0.0"/>
+    </joint>
+
+    <!-- front right wheel -->
+    <link name="front_right_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <xacro:cylinder_inertia m='0.01' r='${correction * wheel_radius}' h='${correction * wheel_length}' xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+    <joint name="front_right_wheel_joint" type="continuous">
+        <parent link="front_tracker"/>
+        <child link="front_right_wheel_link"/>
+        <origin xyz="0.0 0.0 ${tracker_length/2.0 + wheel_length/2.0}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+        <mimic joint="rear_tracker_joint" multiplier="1.0" offet="0.0"/>
+    </joint>
+
+</robot>

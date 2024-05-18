@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sensors">
+
+    <!-- properties -->
+    <xacro:property name="sensor_length" value="0.015"/>
+    <xacro:property name="sensor_width" value="0.015"/>
+    <xacro:property name="sensor_height" value="0.015"/>
+
+    <!-- colours materials -->
+    <material name="darknavy" ><color rgba="0.0 0.01568627450980392 0.20784313725490197 1.0" /></material>
+
+    <!-- sensor frame  -->
+    <link name="base_scan">
+        <visual>
+            <origin xyz="0.0 0.0 ${sensor_height/2.0}" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="${sensor_length} ${sensor_width} ${sensor_height}"/>
+            </geometry>
+            <material name="darknavy"/>
+        </visual>
+        <xacro:box_inertia m='0.25' l='${correction * sensor_length}' w='${correction * sensor_width}' h='${correction * sensor_height}' xyz="0.0 0.0 ${sensor_height/2.0}" rpy="0.0 0.0 0.0"/>
+    </link>
+
+
+    <!-- Adding a sensor -->
+
+    <gazebo reference="base_scan">
+        <material>Gazebo/Orange</material>
+ 
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.2</min>
+                    <max>8</max>
+                </range>
+            </ray>
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=scan</argument>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>base_scan</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+    
+</robot>
